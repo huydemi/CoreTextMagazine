@@ -14,6 +14,11 @@
 		6B9BF48C1F55C5980074FDC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B9BF48A1F55C5980074FDC9 /* LaunchScreen.storyboard */; };
 		6B9BF4951F55C5BA0074FDC9 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9BF4941F55C5BA0074FDC9 /* CoreText.framework */; };
 		6B9BF4971F55C6650074FDC9 /* CTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9BF4961F55C6650074FDC9 /* CTView.swift */; };
+		6B9BF49D1F55C9360074FDC9 /* zombie1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B9BF4991F55C9360074FDC9 /* zombie1.jpg */; };
+		6B9BF49E1F55C9360074FDC9 /* zombie2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B9BF49A1F55C9360074FDC9 /* zombie2.jpg */; };
+		6B9BF49F1F55C9360074FDC9 /* zombie3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B9BF49B1F55C9360074FDC9 /* zombie3.jpg */; };
+		6B9BF4A01F55C9360074FDC9 /* zombies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6B9BF49C1F55C9360074FDC9 /* zombies.txt */; };
+		6B9BF4A21F55C9670074FDC9 /* MarkupParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9BF4A11F55C9670074FDC9 /* MarkupParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		6B9BF48D1F55C5980074FDC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B9BF4941F55C5BA0074FDC9 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		6B9BF4961F55C6650074FDC9 /* CTView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTView.swift; sourceTree = "<group>"; };
+		6B9BF4991F55C9360074FDC9 /* zombie1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zombie1.jpg; sourceTree = "<group>"; };
+		6B9BF49A1F55C9360074FDC9 /* zombie2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zombie2.jpg; sourceTree = "<group>"; };
+		6B9BF49B1F55C9360074FDC9 /* zombie3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zombie3.jpg; sourceTree = "<group>"; };
+		6B9BF49C1F55C9360074FDC9 /* zombies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zombies.txt; sourceTree = "<group>"; };
+		6B9BF4A11F55C9670074FDC9 /* MarkupParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +53,7 @@
 		6B9BF4751F55C5980074FDC9 = {
 			isa = PBXGroup;
 			children = (
+				6B9BF4981F55C9360074FDC9 /* zombieMagMaterials */,
 				6B9BF4801F55C5980074FDC9 /* CoreTextMagazine */,
 				6B9BF47F1F55C5980074FDC9 /* Products */,
 				6B9BF4931F55C5BA0074FDC9 /* Frameworks */,
@@ -67,6 +78,7 @@
 				6B9BF48A1F55C5980074FDC9 /* LaunchScreen.storyboard */,
 				6B9BF4881F55C5980074FDC9 /* Assets.xcassets */,
 				6B9BF48D1F55C5980074FDC9 /* Info.plist */,
+				6B9BF4A11F55C9670074FDC9 /* MarkupParser.swift */,
 			);
 			path = CoreTextMagazine;
 			sourceTree = "<group>";
@@ -77,6 +89,17 @@
 				6B9BF4941F55C5BA0074FDC9 /* CoreText.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B9BF4981F55C9360074FDC9 /* zombieMagMaterials */ = {
+			isa = PBXGroup;
+			children = (
+				6B9BF4991F55C9360074FDC9 /* zombie1.jpg */,
+				6B9BF49A1F55C9360074FDC9 /* zombie2.jpg */,
+				6B9BF49B1F55C9360074FDC9 /* zombie3.jpg */,
+				6B9BF49C1F55C9360074FDC9 /* zombies.txt */,
+			);
+			path = zombieMagMaterials;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +163,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B9BF48C1F55C5980074FDC9 /* LaunchScreen.storyboard in Resources */,
+				6B9BF49F1F55C9360074FDC9 /* zombie3.jpg in Resources */,
+				6B9BF49D1F55C9360074FDC9 /* zombie1.jpg in Resources */,
 				6B9BF4891F55C5980074FDC9 /* Assets.xcassets in Resources */,
+				6B9BF49E1F55C9360074FDC9 /* zombie2.jpg in Resources */,
+				6B9BF4A01F55C9360074FDC9 /* zombies.txt in Resources */,
 				6B9BF4871F55C5980074FDC9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +181,7 @@
 			files = (
 				6B9BF4841F55C5980074FDC9 /* ViewController.swift in Sources */,
 				6B9BF4971F55C6650074FDC9 /* CTView.swift in Sources */,
+				6B9BF4A21F55C9670074FDC9 /* MarkupParser.swift in Sources */,
 				6B9BF4821F55C5980074FDC9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
