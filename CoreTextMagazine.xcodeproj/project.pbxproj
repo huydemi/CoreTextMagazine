@@ -19,6 +19,8 @@
 		6B9BF49F1F55C9360074FDC9 /* zombie3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6B9BF49B1F55C9360074FDC9 /* zombie3.jpg */; };
 		6B9BF4A01F55C9360074FDC9 /* zombies.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6B9BF49C1F55C9360074FDC9 /* zombies.txt */; };
 		6B9BF4A21F55C9670074FDC9 /* MarkupParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9BF4A11F55C9670074FDC9 /* MarkupParser.swift */; };
+		6B9BF4A41F55D0AF0074FDC9 /* CTColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9BF4A31F55D0AF0074FDC9 /* CTColumnView.swift */; };
+		6B9BF4A61F55D1210074FDC9 /* CTSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9BF4A51F55D1210074FDC9 /* CTSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		6B9BF49B1F55C9360074FDC9 /* zombie3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zombie3.jpg; sourceTree = "<group>"; };
 		6B9BF49C1F55C9360074FDC9 /* zombies.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zombies.txt; sourceTree = "<group>"; };
 		6B9BF4A11F55C9670074FDC9 /* MarkupParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkupParser.swift; sourceTree = "<group>"; };
+		6B9BF4A31F55D0AF0074FDC9 /* CTColumnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTColumnView.swift; sourceTree = "<group>"; };
+		6B9BF4A51F55D1210074FDC9 /* CTSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +78,13 @@
 				6B9BF4811F55C5980074FDC9 /* AppDelegate.swift */,
 				6B9BF4831F55C5980074FDC9 /* ViewController.swift */,
 				6B9BF4961F55C6650074FDC9 /* CTView.swift */,
+				6B9BF4A31F55D0AF0074FDC9 /* CTColumnView.swift */,
+				6B9BF4A51F55D1210074FDC9 /* CTSettings.swift */,
+				6B9BF4A11F55C9670074FDC9 /* MarkupParser.swift */,
 				6B9BF4851F55C5980074FDC9 /* Main.storyboard */,
 				6B9BF48A1F55C5980074FDC9 /* LaunchScreen.storyboard */,
 				6B9BF4881F55C5980074FDC9 /* Assets.xcassets */,
 				6B9BF48D1F55C5980074FDC9 /* Info.plist */,
-				6B9BF4A11F55C9670074FDC9 /* MarkupParser.swift */,
 			);
 			path = CoreTextMagazine;
 			sourceTree = "<group>";
@@ -182,7 +188,9 @@
 				6B9BF4841F55C5980074FDC9 /* ViewController.swift in Sources */,
 				6B9BF4971F55C6650074FDC9 /* CTView.swift in Sources */,
 				6B9BF4A21F55C9670074FDC9 /* MarkupParser.swift in Sources */,
+				6B9BF4A61F55D1210074FDC9 /* CTSettings.swift in Sources */,
 				6B9BF4821F55C5980074FDC9 /* AppDelegate.swift in Sources */,
+				6B9BF4A41F55D0AF0074FDC9 /* CTColumnView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
