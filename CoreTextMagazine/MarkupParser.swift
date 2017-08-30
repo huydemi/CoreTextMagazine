@@ -83,6 +83,69 @@ class MarkupParser: NSObject {
                                       }
           }
         } //end of font parsing
+        
+        // If tag starts with "img", use a regex to search for the image's "src" value, i.e. the filename.
+        else if tag.hasPrefix("img") {
+          
+          var filename:String = ""
+          let imageRegex = try NSRegularExpression(pattern: "(?<=src=\")[^\"]+",
+                                                   options: NSRegularExpression.Options(rawValue: 0))
+          imageRegex.enumerateMatches(in: tag,
+                                      options: NSRegularExpression.MatchingOptions(rawValue: 0),
+                                      range: NSMakeRange(0, tag.characters.count)) { (match, _, _) in
+                                        
+                                        if let match = match,
+                                          let range = tag.range(from: match.range) {
+                                          filename = String(tag[range])
+                                        }
+          }
+          // Set the image width to the width of the column and set its height so the image maintains its height-width aspect ratio.
+          let settings = CTSettings()
+          var width: CGFloat = settings.columnRect.width
+          var height: CGFloat = 0
+          
+          if let image = UIImage(named: filename) {
+            height = width * (image.size.height / image.size.width)
+            // If the height of the image is too long for the column, set the height to fit the column and reduce the width to maintain the image's aspect ratio. Since the text following the image will contain the empty space attribute, the text containing the empty space information must fit within the same column as the image; so set the image height to settings.columnRect.height - font.lineHeight.
+            if height > settings.columnRect.height - font.lineHeight {
+              height = settings.columnRect.height - font.lineHeight
+              width = height * (image.size.width / image.size.height)
+            }
+          }
+          
+          // Append an Dictionary containing the image's size, filename and text location to images.
+          images += [["width": NSNumber(value: Float(width)),
+                      "height": NSNumber(value: Float(height)),
+                      "filename": filename,
+                      "location": NSNumber(value: attrString.length)]]
+          // Define RunStruct to hold the properties that will delineate the empty spaces. Then initialize a pointer to contain a RunStruct with an ascent equal to the image height and a width property equal to the image width.
+          struct RunStruct {
+            let ascent: CGFloat
+            let descent: CGFloat
+            let width: CGFloat
+          }
+          
+          let extentBuffer = UnsafeMutablePointer<RunStruct>.allocate(capacity: 1)
+          extentBuffer.initialize(to: RunStruct(ascent: height, descent: 0, width: width))
+          // Create a CTRunDelegateCallbacks that returns the ascent, descent and width properties belonging to pointers of type RunStruct.
+          var callbacks = CTRunDelegateCallbacks(version: kCTRunDelegateVersion1, dealloc: { (pointer) in
+          }, getAscent: { (pointer) -> CGFloat in
+            let d = pointer.assumingMemoryBound(to: RunStruct.self)
+            return d.pointee.ascent
+          }, getDescent: { (pointer) -> CGFloat in
+            let d = pointer.assumingMemoryBound(to: RunStruct.self)
+            return d.pointee.descent
+          }, getWidth: { (pointer) -> CGFloat in
+            let d = pointer.assumingMemoryBound(to: RunStruct.self)
+            return d.pointee.width
+          })
+          // Use CTRunDelegateCreate to create a delegate instance binding the callbacks and the data parameter together.
+          let delegate = CTRunDelegateCreate(&callbacks, extentBuffer)
+          // Create an attributed dictionary containing the delegate instance, then append a single space to attrString which holds the position and sizing information for the hole in the text.
+          let attrDictionaryDelegate = [(kCTRunDelegateAttributeName as String): (delegate as Any)]
+          attrString.append(NSAttributedString(string: " ", attributes: attrDictionaryDelegate))
+        }
+        
       }
     } catch _ {
     }
